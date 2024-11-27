@@ -6,12 +6,26 @@ function initengahan(){
   }
   
   async function mulainama() {
-    //window.location.replace("https://www.feeldream.my.id/2023/01/script-html-bucin.html");
-    bodyblur.style="opacity:.7";
-    wallpaper.style="transform: scale(1);";
-    fotostiker.style="display:inline-flex;";setTimeout(ftmuncul,200);
-    setTimeout(kethalo,500);
-  }
+    const allowedNames = ["asya", "syadrina"];
+    const normalizedName = nama.trim().toLowerCase();
+
+    
+    if (!allowedNames.includes(normalizedName)) {
+        await swals.fire({
+            title: "Nama Tidak Dikenali",
+            text: "Mohon maaf, kode ini adalah kode khusus yang hanya bisa di akses oleh, 'syadrina' atau 'asya' saja.",
+            icon: "error",
+        });
+        return; 
+    }
+
+    
+    bodyblur.style = "opacity:.7";
+    wallpaper.style = "transform: scale(1);";
+    fotostiker.style = "display:inline-flex;";
+    setTimeout(ftmuncul, 200);
+    setTimeout(kethalo, 500);
+}
   
   function ftmuncul(){
     if(ftganti==0){fotostiker.src = deffotostiker;}
